@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,16 +23,20 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 16px;
+        }
+
+        article {
             display: flex;
         }
 
-        img{
+        img {
             width: 80px;
             height: 80px;
         }
-    .artigo-autor {
-    font-weight: bold;
-}
+
+        .artigo-autor {
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -43,17 +48,50 @@
     </header>
 
     <main>
-        <img src="elizeu.png" alt="**Alt text sugerido:**
 
-        > "Fotografia da formação rochosa Boca do Inferno em Cascais, Portugal. As ondas do oceano Atlântico batem com força contra as falésias de rocha escura, com água esbranquiçada e agitada fluindo através do arco natural."">
-        
-        <div>
-            <h2>Meu primeiro post</h2>
-            <p class="artigo-autor">Por: Marcelo Paludetto</p>
-            <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
-        </div>
+        <article>
+            <img src="elizeu.png" alt="Fotografia da formação rochosa Boca do Inferno em Cascais, Portugal.">
 
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <button>❤️<span>0</span></button>
+                <button>👍<span>0</span></button>
+            </div>
+        </article>
+
+        <article>
+            <img src="elizeu.png" alt="Fotografia da formação rochosa Boca do Inferno em Cascais, Portugal.">
+
+            <div>
+                <h2>Meu segundo post</h2>
+                <p class="artigo-autor">Por: Marcelo Paludetto</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <button>❤️<span>0</span></button>
+                <button>👍<span>0</span></button>
+            </div>
+        </article>
     </main>
 
+    <script>
+        const botoes = document.querySelectorAll("button");
+
+        botoes.forEach(botao => {
+            let curtiu = false;
+
+            botao.addEventListener("click", () => {
+                let texto = botao.querySelector("span");
+                if (curtiu === false) {
+                    texto.textContent++;
+                    curtiu = true;
+                } else {
+                    texto.textContent--;
+                    curtiu = false;
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
